@@ -1,0 +1,114 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+{% block title %}
+    About
+{% endblock title %}
+{% block body %}
+    <div class="container full-screen">
+        <h1>About Todo App</h1>
+        <ul>
+            <li>
+                <p>This Todo App is a simple CRUD (Create, Read, Update, Delete) web application created by Dhaval Suthar.</p>
+            </li>
+            <li>
+                <p>It allows users to manage their tasks efficiently. You can add new todos, update existing ones, and delete tasks you've completed.</p>
+            </li>
+            <li>
+                <p>Built with Flask, a web framework for Python, this app showcases the basic principles of web development.</p>
+            </li>
+            <li>
+                <p>Feel free to explore and use the app for organizing your tasks!</p>
+            </li>
+            <li>
+                <p>For more information or to contact the developer, you can visit Dhaval Suthar's GitHub profile: 
+                    <a href="https://github.com/dhaval635" target="_blank">https://github.com/dhaval635</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light mode background color */
+            color: #343a40; /* Light mode text color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .full-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #007bff; /* Light mode heading color */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #28a745; /* Light mode link color */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #343a40; /* Dark mode background color */
+            color: #f8f9fa; /* Dark mode text color */
+        }
+
+        h1.dark-mode {
+            color: #61dafb; /* Dark mode heading color */
+        }
+
+        a.dark-mode {
+            color: #61dafb; /* Dark mode link color */
+        }
+    </style>
+
+    <script>
+        // JavaScript code to toggle between light and dark mode
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+
+            // Check user preference for dark mode
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Set initial mode based on user preference
+            if (prefersDarkMode) {
+                body.classList.add('dark-mode');
+            }
+
+            // Toggle mode when clicking the body
+            body.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+            });
+        });
+    </script>
+{% endblock body %}
